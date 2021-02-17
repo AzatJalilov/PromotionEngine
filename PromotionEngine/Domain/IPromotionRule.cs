@@ -4,7 +4,7 @@
 
     public interface IPromotionRule
     {
-        (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> prices, Dictionary<string, int> items);
+        (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> items);
 
         bool IsApplying(Dictionary<string, int> items);
     }

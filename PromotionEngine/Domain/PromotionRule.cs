@@ -9,7 +9,7 @@
             return items.ContainsKey("A") && items["A"] > 2;
         }
 
-        public (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> prices, Dictionary<string, int> items)
+        public (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> items)
         {
             if (!IsApplying(items))
             {
