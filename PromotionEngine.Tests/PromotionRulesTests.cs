@@ -28,8 +28,9 @@ namespace PromotionEngine.Tests
             new List<object[]>
             {
                 new object[] { new Dictionary<string, int>{ {"A", 3} } , true },
-                new object[] { new Dictionary<string, int>{ {"B", 3} } , true }
-
+                new object[] { new Dictionary<string, int> { { "A", 11 }, { "B", 10 } }, true },
+                new object[] { new Dictionary<string, int>{ {"A", 2} } , false },
+                new object[] { new Dictionary<string, int>{ {"B", 3} } , false },
             };
 
     }

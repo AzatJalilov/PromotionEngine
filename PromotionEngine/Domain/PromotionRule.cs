@@ -6,7 +6,7 @@
     {
         public bool IsApplying(Dictionary<string, int> items)
         {
-            return true;
+            return items.ContainsKey("A") && items["A"] > 2;
         }
 
         public int GetPrice(Dictionary<string, int> items)
