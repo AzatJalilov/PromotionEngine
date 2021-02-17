@@ -5,7 +5,7 @@ namespace PromotionEngine.Tests
     using PromotionEngine.Domain;
     using Xunit;
 
-    public class PromotionRule3ATests
+    public class PromotionRule2BTests
     {
         [MemberData(nameof(ItemsMemberData))]
         [Theory]
@@ -16,7 +16,7 @@ namespace PromotionEngine.Tests
             Dictionary<string, int> expectedItems)
         {
             // Arrange
-            var promotionRule = new PromotionRule3A();
+            var promotionRule = new PromotionRule2B();
 
             // Act
             var resultIsApplying = promotionRule.IsApplying(items);
@@ -31,10 +31,10 @@ namespace PromotionEngine.Tests
         public static IEnumerable<object[]> ItemsMemberData =>
             new List<object[]>
             {
-                new object[] { new Dictionary<string, int>{ {"A", 3} }, true, 130, new Dictionary<string, int>() },
-                new object[] { new Dictionary<string, int> { { "A", 11 }, { "B", 10 } }, true, 130, new Dictionary<string, int>{ { "A", 8 }, { "B", 10 } } },
-                new object[] { new Dictionary<string, int>{ {"A", 2} }, false, 0, new Dictionary<string, int>{ {"A", 2} } },
-                new object[] { new Dictionary<string, int>{ {"B", 3} }, false, 0, new Dictionary<string, int>{ {"B", 3} } },
+                new object[] { new Dictionary<string, int>{ {"B", 2} }, true, 45, new Dictionary<string, int>() },
+                new object[] { new Dictionary<string, int> { { "B", 11 }, { "A", 10 } }, true, 45, new Dictionary<string, int>{ { "B", 9 }, { "A", 10 } } },
+                new object[] { new Dictionary<string, int>{ {"B", 1} }, false, 0, new Dictionary<string, int>{ {"B", 1} } },
+                new object[] { new Dictionary<string, int>{ {"A", 3} }, false, 0, new Dictionary<string, int>{ {"A", 3} } },
             };
     }
 }

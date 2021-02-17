@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
 
-    public class PromotionRule3A : IPromotionRule
+    public class PromotionRule2B : IPromotionRule
     {
         public bool IsApplying(Dictionary<string, int> items)
         {
-            return items.ContainsKey("A") && items["A"] > 2;
+            return items.ContainsKey("B") && items["B"] > 1;
         }
 
         public (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> items)
@@ -18,11 +18,11 @@
             var newItems = new Dictionary<string, int>();
             foreach(var item in items)
             {
-                if (item.Key == "A")
+                if (item.Key == "B")
                 {
-                    if (item.Value > 3)
+                    if (item.Value > 2)
                     {
-                        newItems.Add(item.Key, item.Value - 3);
+                        newItems.Add(item.Key, item.Value - 2);
                     }
                 }
                 else
@@ -30,7 +30,7 @@
                     newItems.Add(item.Key, item.Value);
                 }
             }
-            return (130, newItems);
+            return (45, newItems);
         }
     }
 }

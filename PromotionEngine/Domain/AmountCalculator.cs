@@ -16,7 +16,7 @@
 
        public int Calculate(Dictionary<string, int> items)
         {
-            if (items.Count == 0)
+            if (items == null || items.Count == 0)
             {
                 return 0;
             }
