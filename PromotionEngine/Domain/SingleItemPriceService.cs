@@ -4,7 +4,14 @@
     {
         public int GetPrice(string id)
         {
-            return 100;
+            return id switch
+            {
+                "A" => 100,
+                "B" => 200,
+                "C" => 300,
+                "D" => 400,
+                _ => int.MaxValue
+            };
         }
     }
 }
