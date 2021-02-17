@@ -15,8 +15,22 @@
             {
                 return (0, items);
             }
-
-            return (200, new Dictionary<string, int>());
+            var newItems = new Dictionary<string, int>();
+            foreach(var item in items)
+            {
+                if (item.Key == "A")
+                {
+                    if (item.Value > 3)
+                    {
+                        newItems.Add(item.Key, item.Value - 3);
+                    }
+                }
+                else
+                {
+                    newItems.Add(item.Key, item.Value);
+                }
+            }
+            return (200, newItems);
         }
     }
 }

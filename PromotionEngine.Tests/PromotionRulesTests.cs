@@ -56,12 +56,15 @@ namespace PromotionEngine.Tests
         public static IEnumerable<object[]> ItemsWithPriceMemberData =>
             new List<object[]>
             {
-                new object[] { 
+                new object[] {
                     new Dictionary<string, int> { { "A", 100 } }, new Dictionary<string, int>{ {"A", 3} } , 200, new Dictionary<string, int>()
-                },new object[] {
-                    new Dictionary<string, int> { { "A", 100 }, { "B", 200 } }, new Dictionary<string, int>{ {"A", 3}, { "B", 1 } } , 400, new Dictionary<string, int>()
                 },
+                new object[] {
+                    new Dictionary<string, int> { { "A", 100 }, { "B", 200 } }, new Dictionary<string, int>{ {"A", 3}, { "B", 1 } } , 200, new Dictionary<string, int> { { "B", 1 } }
+                },
+                new object[] {
+                    new Dictionary<string, int> { { "A", 100 }, { "B", 200 } }, new Dictionary<string, int>{ {"A", 4}, { "B", 1 } } , 200, new Dictionary<string, int> { { "A", 1 }, { "B", 1 } }
+                }
             };
-
     }
 }
