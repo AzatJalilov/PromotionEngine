@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace PromotionEngine.Domain
+﻿namespace PromotionEngine.Domain
 {
+    using System.Collections.Generic;
+
     public interface IPromotionRule
     {
-        int GetPrice(Dictionary<string, int> items);
+        (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> prices, Dictionary<string, int> items);
+
         bool IsApplying(Dictionary<string, int> items);
     }
 }

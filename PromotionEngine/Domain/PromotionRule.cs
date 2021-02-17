@@ -9,9 +9,14 @@
             return items.ContainsKey("A") && items["A"] > 2;
         }
 
-        public int GetPrice(Dictionary<string, int> items)
+        public (int amount, Dictionary<string, int> items) Apply(Dictionary<string, int> prices, Dictionary<string, int> items)
         {
-            return 0;
+            if (!IsApplying(items))
+            {
+                return (0, items);
+            }
+
+            return (200, new Dictionary<string, int>());
         }
     }
 }
