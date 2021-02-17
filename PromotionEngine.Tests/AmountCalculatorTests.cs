@@ -25,8 +25,10 @@
             new List<object[]>
             {
                     new object[] { Array.Empty<IPromotionRule>(), new Dictionary<string, int>{ {"A", 3} }, 300 },
-                    new object[] { new[] { new PromotionRule() }, new Dictionary<string, int>{ {"A", 3} }, 200 },
-                    new object[] { new[] { new PromotionRule() }, new Dictionary<string, int>{ {"A", 3}, {"B", 10} }, 2200 },
+                    new object[] { new[] { new PromotionRule3A() }, new Dictionary<string, int>{ {"A", 3} }, 200 },
+                    new object[] { new[] { new PromotionRule3A() }, new Dictionary<string, int>{ {"A", 3}, {"B", 10} }, 2200 },
+                    new object[] { new[] { new PromotionRule3A() }, new Dictionary<string, int>{ {"A", 3}, {"B", 10}, {"C", 10}, {"D", 5} }, 7200 },
+                    new object[] { new IPromotionRule[] { new PromotionRule3A(), new PromotionRuleCAndD() }, new Dictionary<string, int>{ {"A", 3}, {"B", 10}, {"C", 10}, {"D", 5} }, 4350 },
             };
     }
 

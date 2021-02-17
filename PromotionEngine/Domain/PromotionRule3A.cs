@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class PromotionRule : IPromotionRule
+    public class PromotionRule3A : IPromotionRule
     {
         public bool IsApplying(Dictionary<string, int> items)
         {

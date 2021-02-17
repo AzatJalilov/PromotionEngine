@@ -5,7 +5,7 @@ namespace PromotionEngine.Tests
     using PromotionEngine.Domain;
     using Xunit;
 
-    public class PromotionRulesTests
+    public class PromotionRule3ATests
     {
         [MemberData(nameof(ItemsMemberData))]
         [Theory]
@@ -16,7 +16,7 @@ namespace PromotionEngine.Tests
             Dictionary<string, int> expectedItems)
         {
             // Arrange
-            var promotionRule = new PromotionRule();
+            var promotionRule = new PromotionRule3A();
 
             // Act
             var resultIsApplying = promotionRule.IsApplying(items);
